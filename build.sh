@@ -1,8 +1,9 @@
 #!/bin/bash
-docker stop nginx
-echo 'nginx stop'
-rm -rf /home/nginx/html/*
-echo '/home/nginx/html'
-docker cp nginx:/var/jenkins_home/workspace/demo-front-master/dist/* /home/nginx/html/
-docker start nginx
-echo 'nginx start'
+echo $PATH
+npm config set proxy null
+npm config set https-proxy null
+npm config set registry https://registry.npm.taobao.org
+node -v
+npm -v
+npm install
+npm run build

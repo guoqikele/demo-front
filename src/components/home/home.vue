@@ -91,7 +91,6 @@ export default {
   },
   created () {
     requestUserOfMenus().then(res => {
-      debugger
       if (res.data.code === 200) {
         this.menuData = res.data.data
         // 清空数据
